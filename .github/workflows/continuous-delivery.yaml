@@ -110,8 +110,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: docker push
-        run: docker push pbccc/devops:latest
+      # - name: docker push
+      #   run: docker push pbccc/devops:latest
 
 
 
@@ -123,19 +123,19 @@ jobs:
       #     username: ${{ github.repository_owner }}
       #     password: ${{ secrets.CR_PAT }}
 
-      # - name: Build and publish
-      #   id: docker_build
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: ./
-      #     file: ./Dockerfile
-      #     target: prod
-      #     platforms: linux/amd64 # linux/arm/v7,linux/arm64,linux/386,linux/ppc64le,linux/s390x,linux/arm/v6
-      #     push: ${{ github.event_name != 'pull_request' }}
-      #     tags: ${{ steps.meta.outputs.tags }}
-      #     cache-from: type=local,src=/tmp/.buildx-cache
-      #     cache-to: type=local,dest=/tmp/.buildx-cache
+      - name: Build and publish
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ./
+          file: ./Dockerfile
+          target: prod
+          platforms: linux/amd64 # linux/arm/v7,linux/arm64,linux/386,linux/ppc64le,linux/s390x,linux/arm/v6
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
 
-      # - name: Image digest
-      #   run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
