@@ -69,7 +69,6 @@ jobs:
     - name: chk directory
       run: ls -al
 
-
     - name: Build image
       env:
         IMAGE_NAME: ${{ github.event.repository.name }}
