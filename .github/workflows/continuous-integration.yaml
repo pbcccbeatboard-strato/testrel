@@ -27,12 +27,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-      - name: grant execute permission for gradlew 
-        run: chmod +x gradlew
-        shell: bash
-      - name: build gradle
-        run: ./gradlew clean build
-        shell: bash
+
   build-container-image:
     name: Build a container image
     runs-on: ubuntu-22.04
@@ -43,6 +38,14 @@ jobs:
 
       - name: Test Echo
         run: echo 'test String - build start'
+
+      - name: grant execute permission for gradlew 
+        run: chmod +x gradlew
+        shell: bash
+
+      - name: build gradle
+        run: ./gradlew clean build
+        shell: bash
 
       - name: Build image
         env:
