@@ -50,8 +50,8 @@ jobs:
 
     steps:
       #- uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
       - name: Build image
+        uses: actions/setup-java@v4
         env:
           IMAGE_NAME: ${{ github.event.repository.name }}
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
