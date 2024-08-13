@@ -35,9 +35,8 @@ jobs:
       run: chmod +x gradlew
       shell: bash
 
-
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: ./gradlew clean build --statcktrace
 
 
   build-container-image:
