@@ -32,7 +32,7 @@ jobs:
     # Job name is "Publish a container image"
     name: Publish a container image
 
-    if: github.repository_owner == 'cloud-barista'
+    #if: github.repository_owner == 'cloud-barista'
 
     runs-on: ubuntu-22.04
 
