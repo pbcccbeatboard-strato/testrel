@@ -93,7 +93,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: test-echo
-        run: echo '${{ secrets.DOCKER_USERNAME }}'
+        run: echo $DOCKER_USERNAME'
 
       # TODO: Create a PAT with `read:packages` and `write:packages` scopes and save it as an Actions secret `CR_PAT`
       - name: Login to GitHub Container Registry
