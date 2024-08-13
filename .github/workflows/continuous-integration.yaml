@@ -36,7 +36,7 @@ jobs:
       shell: bash
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew clean build --statcktrace
+      run: ./gradlew clean build --stacktrace
 
 
   build-container-image:
