@@ -50,9 +50,9 @@ jobs:
       - name: Test Echo
         run: echo 'test String - build start'
 
-      #- name: grant execute permission for gradlew 
-      #  run: chmod +x gradlew
-      #  shell: bash
+      - name: grant execute permission for gradlew 
+        run: chmod +x gradlew
+        shell: bash
 
       #- name: build gradle
       #  run: ./gradlew clean build --stacktrace
