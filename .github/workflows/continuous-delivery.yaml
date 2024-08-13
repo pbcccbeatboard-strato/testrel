@@ -19,9 +19,12 @@ on:
       - "README.md"
 
 env:
-  DOCKER_REGISTRY_NAME: cloudbaristaorg
-  GHCR_REGISTRY_NAME: ${{ github.repository_owner }}
-  IMAGE_NAME: ${{ github.event.repository.name }}
+  # DOCKER_REGISTRY_NAME: cloudbaristaorg
+  # GHCR_REGISTRY_NAME: ${{ github.repository_owner }}
+  # IMAGE_NAME: ${{ github.event.repository.name }}
+   DOCKER_REGISTRY_NAME: pbccc
+   GHCR_REGISTRY_NAME: pbccc
+   IMAGE_NAME: devops
 
 jobs:
   # The job key is "publish-container-image"
