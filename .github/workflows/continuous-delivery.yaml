@@ -64,7 +64,7 @@ jobs:
             # type=sha,enable=true,format=short            
             ## Tags for a push or pull_request event
             # type=ref,event=branch
-            # type=ref,event=tag
+            type=ref,event=tag
             # type=ref,event=pr
             ## Tags for a schedule event - handlebars with timezone (e.g. 20200110-093000)
             # type=schedule,enable=true,pattern={{date 'YYYYMMDD-hhmmss' tz='Asia/Tokyo'}}
@@ -109,6 +109,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo ${{ secrets.DOCKER_USERNAME }}
+
 
       # - name: docker push
       #   run: docker push pbccc/devops:latest
